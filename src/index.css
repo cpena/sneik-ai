@@ -1,14 +1,202 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+html, body {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.loading {
+  width: 320px;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.game-container {
+  margin: auto;
+  vertical-align: top;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.game {
+  width: 320px;
+  padding: 5px;
+  border: 1px solid #000;
+  margin: auto;
+}
+
+.game .title{
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.game .scores {
+  box-sizing: content-box;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.game .scores .info{
+  width: 33.3%;
+  text-align: center;
+}
+
+.game .grid {
+  box-sizing: content-box;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.game .grid .grid-col .grid-cell:first-child {
+  border-top: 1px solid lightgray;
+}
+
+.game .grid .grid-col:last-child {
+  border-right: 1px solid lightgray;
+}
+
+.game .grid .grid-cell {
+  border-left: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  width: 15px;
+  height: 15px;
+}
+
+.game .grid .grid-cell-wall {
+  background-color: black;
+}
+.game .grid .grid-cell-food {
+  background-color: red;
+}
+.game .grid-cell-snake {
+  background-color: grey;
+}
+
+.game-settings {
+  width: 320px;
+  padding: 5px;
+  border: 1px solid #000;
+  margin: auto;
+  margin-top: 5px;
+  font-size: 10px;
+}
+.game-settings .game-setting{
+  margin-top: 5px;
+}
+
+.game-settings .title{
+  text-align: center;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.game-settings .setting-name{
+  width: 155px;
+  display: inline-block;
+}
+
+.game-settings .button-toggle {
+  border: 2px solid black;
+  padding: 1px;
+  width: 150px;
+  height: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+.game-settings .button-toggle .wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.game-settings .button-toggle .wrapper .text {
+  display: block;
+  background-color: black;
+  color: white;
+  padding: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  transition: -webkit-transform 100ms ease-in;
+  transition: transform 100ms ease-in;
+  transition: transform 100ms ease-in, -webkit-transform 100ms ease-in;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  content: "off";
+  position: relative;
+}
+.game-settings .button-toggle .wrapper .text .off, .button .wrapper .text .on {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 100ms linear;
+  font-size: 10px;
+}
+.game-settings .button-toggle .wrapper .text .on {
+  opacity: 0;
+}
+.game-settings .button-toggle .input {
+  display: none;
+}
+.game-settings .button-toggle .input:checked + .wrapper > .text {
+  -webkit-transform: translatex(100%);
+          transform: translatex(100%);
+}
+.game-settings .button-toggle .input:checked + .wrapper > .text .on {
+  opacity: 1;
+}
+.game-settings .button-toggle .input:checked + .wrapper > .text .off {
+  opacity: 0;
+}
+
+.game-stats {
+  width: 320px;
+  padding: 5px;
+  border: 1px solid #000;
+  margin: auto;
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.brain-internals {
+  width: 640px;
+  padding: 5px;
+  border: 1px solid #000;
+  font-size: 10px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.brain-internals  .q-table .title {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.brain-internals .q-table span{
+  padding: 10px;
 }
