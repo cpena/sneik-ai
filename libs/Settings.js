@@ -12,9 +12,9 @@ module.exports = {
   FINAL_EPSILON: 0.1,
   LEARNING_RATE: 0.15,
 
-  TRAINING_INTERVAL: -1, // miliseconds, -1 disabled
-  SAVE_MODEL: false,
-  SAVE_MODEL_DESTINATION: 'file://',
+  TRAINING_INTERVAL: 15000, // miliseconds, -1 disabled
+  SAVE_MODEL: true,
+  SAVE_MODEL_DESTINATION: 'indexeddb://', // file:// from node
 
   BATCH_SIZE: 100,
   QLEARN_REWARD_ALIVE: -0.1,

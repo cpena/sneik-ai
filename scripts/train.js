@@ -2,8 +2,7 @@ const Brain = require('../libs/Brain')
 const Memory = require('../libs/Memory')
 const Game = require('../libs/Game')
 
-// require('@tensorflow/tfjs-node')
-require('@tensorflow/tfjs-node-gpu')
+require('@tensorflow/tfjs-node')
 const GAME_STATS_INTERVAL = 10000
 
 class Sneik {
